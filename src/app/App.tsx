@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+import GitHubCorners from '@uiw/react-github-corners';
 import { SketchPicker, ColorResult, RGBColor } from 'react-color'
 import styles from './App.module.css'
 import Code from './Code'
@@ -15,6 +16,13 @@ export default function App() {
         backgroundColor: `rgba(${color.r}, ${color.g}, ${color.b}, ${color.a})`
       }}
     >
+      <GitHubCorners
+        fixed
+        zIndex={999}
+        size={60}
+        target="__blank"
+        href="https://github.com/uiwjs/ui-color"
+      />
       <div className={styles.header}>
         <div>
           <SketchPicker
