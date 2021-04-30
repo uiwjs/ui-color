@@ -1,6 +1,6 @@
 {
   "name": "ui-color",
-  "version": "6.9.0",
+  "version": "1.0.0",
   "description": "Converting HEX & RGB colors to UIColor/NSColor/Color for both Objective C & Swift.",
   "private": true,
   "scripts": {
