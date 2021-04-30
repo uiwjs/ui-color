@@ -1,0 +1,25 @@
+
+html, body {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAMUlEQVQ4T2NkYGAQYcAP3uCTZhw1gGGYhAGBZIA/nYDCgBDAm9BGDWAAJyRCgLaBCAAgXwixzAS0pgAAAABJRU5ErkJggg==) left center;
+}
+
+.header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.code {
+  margin-left: 25px;
+  max-width: 330px;
+}
+
+.footer {
+  text-align: center;
+  padding: 10px 0 38px 0;
+  font-size: 0.8rem;
+  color: #333;
+}
