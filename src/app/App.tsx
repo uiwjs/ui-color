@@ -30,8 +30,8 @@ export default function App() {
             onChange={handleColorChange}
           />
           <div className={styles.footer}>
-            <div>Copyright © Color 2021.</div>
-            <div>Developed by <a href="https://github.com/uiwjs" target="__blank">uiw</a>.</div>
+            <div>Copyright © uiwjs 2021.</div>
+            <div>Developed by <a href="https://github.com/uiwjs" target="__blank">Kenny</a>.</div>
           </div>
         </div>
         <div className={styles.code}>
