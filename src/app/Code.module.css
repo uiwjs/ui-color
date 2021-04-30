@@ -10,9 +10,13 @@
 }
 
 .code {
-  padding: 10px;
-  border-radius: 4px;
   background-color: #eaeaea;
+  word-break: break-all;
+  white-space: initial;
+  padding: 14px;
+  padding: 8px;
+  margin: 0;
+  border-radius: 3px;
 }
 
 .tool {

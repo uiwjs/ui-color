@@ -1,0 +1,30 @@
+.function {
+  color: #D64A85;
+  font-weight: bold;
+}
+
+.number {
+  color: #0041ff;
+}
+
+.keyword {
+  color: #0036d4;
+  font-weight: bold;
+}
+
+.class-name {
+  font-weight: bold;
+}
+
+.punctuation {
+  color: #adadad;
+}
+
+.named-parameter {
+  color: #D64A85;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #2b2982;
+}
