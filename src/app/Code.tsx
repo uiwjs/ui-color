@@ -42,7 +42,7 @@ export default function Code(props: CodeProps) {
     <div className={styles.warpper}>
       <div className={styles.tool}>
         <div className={styles.title}>{title}</div>
-        <div className={`${styles.copy} ${isCopy ? styles.copied: ''}`} onClick={copyHandle}>Copy</div>
+        <div className={`${styles.copy} ${isCopy ? styles.copied: ''}`} onClick={copyHandle}>{isCopy ? 'Copied' : 'Copy'}</div>
       </div>
       <pre className={styles.code}>
         <code className={`language-${lang}`} dangerouslySetInnerHTML={{ __html: html}} />
