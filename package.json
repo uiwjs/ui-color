@@ -4,14 +4,16 @@
   "description": "Converting HEX & RGB colors to UIColor/NSColor/Color for both Objective C & Swift.",
   "private": true,
   "scripts": {
+    "prepare": "husky install",
     "start": "kkt start",
-    "build": "kkt build"
+    "build": "kkt build",
+    "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\""
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/uiwjs/ui-color.git"
   },
-  "author": "",
+  "author": "Kenny Wong <wowohoo@qq.com>",
   "license": "MIT",
   "dependencies": {
     "@uiw/react-github-corners": "1.4.0",
@@ -27,7 +29,15 @@
     "@types/react": "17.0.11",
     "@types/react-color": "3.0.4",
     "@types/react-dom": "17.0.8",
-    "kkt": "6.10.4"
+    "husky": "6.0.0",
+    "lint-staged": "11.0.0",
+    "kkt": "6.10.4",
+    "prettier": "2.3.2"
+  },
+  "lint-staged": {
+    "*.{js,jsx,tsx,ts,less,md,json}": [
+      "prettier --write"
+    ]
   },
   "browserslist": {
     "production": [
