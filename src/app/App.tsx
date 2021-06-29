@@ -1,48 +1,101 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import GitHubCorners from '@uiw/react-github-corners';
-import { SketchPicker, ColorResult, RGBColor } from 'react-color'
-import styles from './App.module.css'
-import Code from './Code'
+import { SketchPicker, ColorResult, RGBColor, CirclePicker, CirclePickerProps } from 'react-color';
+import styles from './App.module.css';
+import Code from './Code';
+import colorsData from './colors.json';
+
+function CircleColors(props: CirclePickerProps & { title?: string }) {
+  return (
+    <div className={styles.color}>
+      <CirclePicker {...props} />
+      <label>{props.title}</label>
+    </div>
+  );
+}
 
 export default function App() {
-  const [color, setColor] = useState<RGBColor>({r: 224, g: 224, b: 224, a: 0.61})
+  const [color, setColor] = useState<RGBColor>({ r: 224, g: 224, b: 224, a: 0.61 });
   const handleColorChange = (data: ColorResult) => {
-    setColor(data.rgb)
-  }
+    setColor(data.rgb);
+  };
+  const handleSwatchesPicker = (data: ColorResult) => {
+    setColor(data.rgb);
+  };
 
   return (
     <div
       style={{
-        backgroundColor: `rgba(${color.r}, ${color.g}, ${color.b}, ${color.a})`
+        backgroundColor: `rgba(${color.r}, ${color.g}, ${color.b}, ${color.a})`,
       }}
     >
-      <GitHubCorners
-        fixed
-        zIndex={999}
-        size={60}
-        target="__blank"
-        href="https://github.com/uiwjs/ui-color"
-      />
-      <div className={styles.header}>
-        <div>
-          <SketchPicker
-            color={color}
-            onChange={handleColorChange}
-          />
-          <div className={styles.footer}>
-            <div>Copyright © uiwjs 2021.</div>
-            <div>Developed by <a href="https://github.com/uiwjs" target="__blank">Kenny</a>.</div>
+      <GitHubCorners fixed zIndex={999} size={60} target="__blank" href="https://github.com/uiwjs/ui-color" />
+      <div className={styles.warpper}>
+        <div className={styles.colors}>
+          <div>
+            {colorsData.map((item, idx) => {
+              return <CircleColors color={color} key={idx} {...item} onChange={handleSwatchesPicker} />;
+            })}
           </div>
         </div>
-        <div className={styles.code}>
-          <Code lang="swift" title="SwiftUI" code={`Color(red: ${color.r / 100}, green: ${color.g / 100}, blue: ${color.b / 100}).opacity(${color.a})`} />
-          <Code lang="swift" title="Swift for iOS" code={`UIColor(red: ${color.r / 100}, green: ${color.g / 100}, blue: ${color.b / 100}, alpha: ${color.a})`} />
-          <Code lang="swift" title="Swift for macOS" code={`NSColor(red: ${color.r / 100}, green: ${color.g / 100}, blue: ${color.b / 100}, alpha: ${color.a})`} />
-          <Code lang="objectivec" title="Objective-C for iOS" code={`[UIColor colorWithRed: ${color.r / 100} green: ${color.g / 100} blue: ${color.b / 100} alpha: ${color.a}];`} />
-          <Code lang="objectivec" title="Objective-C for macOS" code={`[NSColor colorWithCalibratedRed: ${color.r / 100} green: ${color.g / 100} blue: ${color.b / 100} alpha: ${color.a}];`} />
-          <Code lang="csharp" title="Xamarin (C#)" code={`new UIColor(red: ${color.r / 100}f, green: ${color.g / 100}f, blue: ${color.b / 100}f, alpha: ${color.a}f)`} />
+        <div className={styles.pane}>
+          <div>
+            <SketchPicker color={color} onChange={handleColorChange} />
+            <div className={styles.footer}>
+              <div>Copyright © uiwjs 2021.</div>
+              <div>
+                Developed by{' '}
+                <a href="https://github.com/uiwjs" target="__blank">
+                  Kenny
+                </a>
+                .
+              </div>
+            </div>
+          </div>
+          <div className={styles.code}>
+            <Code
+              lang="swift"
+              title="SwiftUI"
+              code={`Color(red: ${color.r / 100}, green: ${color.g / 100}, blue: ${color.b / 100}).opacity(${color.a})`}
+            />
+            <Code
+              lang="swift"
+              title="Swift for iOS"
+              code={`UIColor(red: ${color.r / 100}, green: ${color.g / 100}, blue: ${color.b / 100}, alpha: ${
+                color.a
+              })`}
+            />
+            <Code
+              lang="swift"
+              title="Swift for macOS"
+              code={`NSColor(red: ${color.r / 100}, green: ${color.g / 100}, blue: ${color.b / 100}, alpha: ${
+                color.a
+              })`}
+            />
+            <Code
+              lang="objectivec"
+              title="Objective-C for iOS"
+              code={`[UIColor colorWithRed: ${color.r / 100} green: ${color.g / 100} blue: ${color.b / 100} alpha: ${
+                color.a
+              }];`}
+            />
+            <Code
+              lang="objectivec"
+              title="Objective-C for macOS"
+              code={`[NSColor colorWithCalibratedRed: ${color.r / 100} green: ${color.g / 100} blue: ${
+                color.b / 100
+              } alpha: ${color.a}];`}
+            />
+            <Code
+              lang="csharp"
+              title="Xamarin (C#)"
+              code={`new UIColor(red: ${color.r / 100}f, green: ${color.g / 100}f, blue: ${color.b / 100}f, alpha: ${
+                color.a
+              }f)`}
+            />
+          </div>
         </div>
       </div>
     </div>
-  )
-};
+  );
+}

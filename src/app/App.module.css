@@ -3,13 +3,18 @@ html, body {
   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAMUlEQVQ4T2NkYGAQYcAP3uCTZhw1gGGYhAGBZIA/nYDCgBDAm9BGDWAAJyRCgLaBCAAgXwixzAS0pgAAAABJRU5ErkJggg==) left center;
 }
 
-.header {
+.warpper {
+  display: flex;
+  flex-direction: row;
+}
+.pane {
   min-height: 100vh;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+  flex: 1;
 }
 
 .code {
@@ -22,4 +27,29 @@ html, body {
   padding: 10px 0 38px 0;
   font-size: 0.8rem;
   color: #333;
+}
+
+.colors, .colors > div {
+  width: 270px;
+}
+
+.colors {
+  position: relative;
+}
+
+.colors > div {
+  position: fixed;
+  overflow:auto;
+  height: 100%;
+}
+
+.color {
+  background-color: rgb(255 255 255 / 82%);
+  padding: 10px;
+}
+.color label {
+  font-size: 12px;
+  max-width: 180px;
+  display: block;
+  padding-top: 5px;
 }
