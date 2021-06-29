@@ -1,5 +1,6 @@
 import copyTextToClipboard from '@uiw/copy-to-clipboard';
 import { useEffect, useState } from 'react';
+import { RGBColor } from 'react-color';
 import Prism from 'prismjs';
 import 'prismjs/components/prism-csharp';
 import 'prismjs/components/prism-swift';
@@ -12,10 +13,11 @@ type CodeProps = {
   title: string;
   lang: string;
   code: string;
+  color?: RGBColor;
 };
 
 export default function Code(props: CodeProps) {
-  const { title, lang, code } = props || {};
+  const { title, lang, code, color } = props || {};
   const [isCopy, setIsCopy] = useState(false);
   const [html, setHtml] = useState('');
   function copyHandle() {
@@ -41,7 +43,21 @@ export default function Code(props: CodeProps) {
   return (
     <div className={styles.warpper}>
       <div className={styles.tool}>
-        <div className={styles.title}>{title}</div>
+        <div className={styles.title}>
+          {color && (
+            <span
+              style={{
+                marginRight: 10,
+                borderRadius: 3,
+                display: 'inline-block',
+                minWidth: 12,
+                minHeight: 12,
+                backgroundColor: `rgba(${color.r}, ${color.g}, ${color.b}, ${color.a})`,
+              }}
+            />
+          )}
+          {title}
+        </div>
         <div className={`${styles.copy} ${isCopy ? styles.copied : ''}`} onClick={copyHandle}>
           {isCopy ? 'Copied' : 'Copy'}
         </div>

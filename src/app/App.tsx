@@ -54,11 +54,13 @@ export default function App() {
           </div>
           <div className={styles.code}>
             <Code
+              color={color}
               lang="swift"
               title="SwiftUI"
               code={`Color(red: ${color.r / 100}, green: ${color.g / 100}, blue: ${color.b / 100}).opacity(${color.a})`}
             />
             <Code
+              color={color}
               lang="swift"
               title="Swift for iOS"
               code={`UIColor(red: ${color.r / 100}, green: ${color.g / 100}, blue: ${color.b / 100}, alpha: ${
@@ -66,6 +68,7 @@ export default function App() {
               })`}
             />
             <Code
+              color={color}
               lang="swift"
               title="Swift for macOS"
               code={`NSColor(red: ${color.r / 100}, green: ${color.g / 100}, blue: ${color.b / 100}, alpha: ${
@@ -73,6 +76,7 @@ export default function App() {
               })`}
             />
             <Code
+              color={color}
               lang="objectivec"
               title="Objective-C for iOS"
               code={`[UIColor colorWithRed: ${color.r / 100} green: ${color.g / 100} blue: ${color.b / 100} alpha: ${
@@ -80,6 +84,7 @@ export default function App() {
               }];`}
             />
             <Code
+              color={color}
               lang="objectivec"
               title="Objective-C for macOS"
               code={`[NSColor colorWithCalibratedRed: ${color.r / 100} green: ${color.g / 100} blue: ${
@@ -87,6 +92,7 @@ export default function App() {
               } alpha: ${color.a}];`}
             />
             <Code
+              color={color}
               lang="csharp"
               title="Xamarin (C#)"
               code={`new UIColor(red: ${color.r / 100}f, green: ${color.g / 100}f, blue: ${color.b / 100}f, alpha: ${
