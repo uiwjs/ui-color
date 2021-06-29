@@ -1,26 +1,33 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import GitHubCorners from '@uiw/react-github-corners';
 import { SketchPicker, ColorResult, RGBColor, CirclePicker, CirclePickerProps } from 'react-color';
 import styles from './App.module.css';
 import Code from './Code';
 import colorsData from './colors.json';
 
-function CircleColors(props: CirclePickerProps & { title?: string }) {
-  return (
-    <div className={styles.color}>
-      <CirclePicker {...props} />
-      <label>{props.title}</label>
-    </div>
-  );
+function CircleColors(props: CirclePickerProps & { title?: string; index: number }) {
+  const { index, ...other } = props;
+  const color = (props.colors || []).join('');
+  return useMemo(() => {
+    return (
+      <div className={styles.color}>
+        <CirclePicker {...other} />
+        <label>{props.title}</label>
+      </div>
+    );
+  }, [color, index]);
 }
 
 export default function App() {
   const [color, setColor] = useState<RGBColor>({ r: 224, g: 224, b: 224, a: 0.61 });
+  const [hex, setHex] = useState('#E0E0E0');
   const handleColorChange = (data: ColorResult) => {
     setColor(data.rgb);
+    setHex(data.hex);
   };
   const handleSwatchesPicker = (data: ColorResult) => {
     setColor(data.rgb);
+    setHex(data.hex);
   };
 
   return (
@@ -33,9 +40,15 @@ export default function App() {
       <div className={styles.warpper}>
         <div className={styles.colors}>
           <div>
-            {colorsData.map((item, idx) => {
-              return <CircleColors color={color} key={idx} {...item} onChange={handleSwatchesPicker} />;
-            })}
+            {colorsData.map((item, idx) => (
+              <CircleColors
+                index={item.colors.indexOf(hex.toLocaleUpperCase())}
+                color={hex}
+                key={idx}
+                {...item}
+                onChange={handleSwatchesPicker}
+              />
+            ))}
           </div>
         </div>
         <div className={styles.pane}>
