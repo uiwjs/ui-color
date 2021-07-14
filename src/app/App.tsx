@@ -1,7 +1,9 @@
 import { useMemo, useState } from 'react';
 import GitHubCorners from '@uiw/react-github-corners';
-import { hsvaToRgba, ColorResult } from '@uiw/color-convert';
+import { hsvaToRgba, hsvaToHex, ColorResult } from '@uiw/color-convert';
 import Circle, { CircleProps } from '@uiw/react-color-circle';
+import Wheel from '@uiw/react-color-wheel';
+import ShadeSlider from '@uiw/react-color-shade-slider';
 import Sketch from '@uiw/react-color-sketch';
 import styles from './App.module.css';
 import Code from './Code';
@@ -22,16 +24,14 @@ function CircleColors(props: CircleProps & { title?: string; index: number }) {
 
 export default function App() {
   const [hsva, setHsva] = useState({ h: 209, s: 36, v: 90, a: 1 });
-  const [hex, setHex] = useState('#E0E0E0');
   const handleColorChange = (data: ColorResult) => {
     setHsva(data.hsva);
-    setHex(data.hex);
   };
   const handleSwatchesPicker = (data: ColorResult) => {
     setHsva(data.hsva);
-    setHex(data.hex);
   };
   const color = hsvaToRgba(hsva);
+  const hex = hsvaToHex(hsva);
   return (
     <div
       style={{
@@ -55,6 +55,21 @@ export default function App() {
         </div>
         <div className={styles.pane}>
           <div>
+            <Wheel
+              color={hsva}
+              onChange={handleColorChange}
+              style={{
+                marginBottom: 20,
+                boxShadow: 'rgb(0 0 0 / 15%) 0px 0px 0px 1px, rgb(0 0 0 / 15%) 0px 8px 16px',
+                borderRadius: '50%',
+              }}
+            />
+            <ShadeSlider
+              hsva={hsva}
+              radius={8}
+              style={{ marginBottom: 21, background: 'transparent', backgroundColor: 'transparent' }}
+              onChange={(newShade) => setHsva({ ...hsva, v: newShade.v })}
+            />
             <Sketch color={hsva} onChange={handleColorChange} />
             <div className={styles.footer}>
               <div>Copyright © uiwjs 2021.</div>
