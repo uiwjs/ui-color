@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import GitHubCorners from '@uiw/react-github-corners';
-import { rgbaToHsva, RgbaColor, ColorResult } from '@uiw/color-convert';
+import { hsvaToRgba, ColorResult } from '@uiw/color-convert';
 import Circle, { CircleProps } from '@uiw/react-color-circle';
 import Sketch from '@uiw/react-color-sketch';
 import styles from './App.module.css';
@@ -21,17 +21,17 @@ function CircleColors(props: CircleProps & { title?: string; index: number }) {
 }
 
 export default function App() {
-  const [color, setColor] = useState<RgbaColor>({ r: 224, g: 224, b: 224, a: 0.61 });
+  const [hsva, setHsva] = useState({ h: 209, s: 36, v: 90, a: 1 });
   const [hex, setHex] = useState('#E0E0E0');
   const handleColorChange = (data: ColorResult) => {
-    setColor(data.rgba);
+    setHsva(data.hsva);
     setHex(data.hex);
   };
   const handleSwatchesPicker = (data: ColorResult) => {
-    setColor(data.rgba);
+    setHsva(data.hsva);
     setHex(data.hex);
   };
-
+  const color = hsvaToRgba(hsva);
   return (
     <div
       style={{
@@ -55,7 +55,7 @@ export default function App() {
         </div>
         <div className={styles.pane}>
           <div>
-            <Sketch color={rgbaToHsva(color)} onChange={handleColorChange} />
+            <Sketch color={hsva} onChange={handleColorChange} />
             <div className={styles.footer}>
               <div>Copyright © uiwjs 2021.</div>
               <div>
