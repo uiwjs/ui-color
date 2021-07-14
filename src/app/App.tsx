@@ -1,17 +1,19 @@
 import { useMemo, useState } from 'react';
 import GitHubCorners from '@uiw/react-github-corners';
-import { SketchPicker, ColorResult, RGBColor, CirclePicker, CirclePickerProps } from 'react-color';
+import { rgbaToHsva, RgbaColor, ColorResult } from '@uiw/color-convert';
+import Circle, { CircleProps } from '@uiw/react-color-circle';
+import Sketch from '@uiw/react-color-sketch';
 import styles from './App.module.css';
 import Code from './Code';
 import colorsData from './colors.json';
 
-function CircleColors(props: CirclePickerProps & { title?: string; index: number }) {
+function CircleColors(props: CircleProps & { title?: string; index: number }) {
   const { index, ...other } = props;
   const color = (props.colors || []).join('');
   return useMemo(() => {
     return (
       <div className={styles.color}>
-        <CirclePicker {...other} />
+        <Circle {...other} />
         <label>{props.title}</label>
       </div>
     );
@@ -19,14 +21,14 @@ function CircleColors(props: CirclePickerProps & { title?: string; index: number
 }
 
 export default function App() {
-  const [color, setColor] = useState<RGBColor>({ r: 224, g: 224, b: 224, a: 0.61 });
+  const [color, setColor] = useState<RgbaColor>({ r: 224, g: 224, b: 224, a: 0.61 });
   const [hex, setHex] = useState('#E0E0E0');
   const handleColorChange = (data: ColorResult) => {
-    setColor(data.rgb);
+    setColor(data.rgba);
     setHex(data.hex);
   };
   const handleSwatchesPicker = (data: ColorResult) => {
-    setColor(data.rgb);
+    setColor(data.rgba);
     setHex(data.hex);
   };
 
@@ -53,7 +55,7 @@ export default function App() {
         </div>
         <div className={styles.pane}>
           <div>
-            <SketchPicker color={color} onChange={handleColorChange} />
+            <Sketch color={rgbaToHsva(color)} onChange={handleColorChange} />
             <div className={styles.footer}>
               <div>Copyright © uiwjs 2021.</div>
               <div>

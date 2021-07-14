@@ -1,6 +1,6 @@
-import copyTextToClipboard from '@uiw/copy-to-clipboard';
 import { useEffect, useState } from 'react';
-import { RGBColor } from 'react-color';
+import { RgbaColor } from '@uiw/color-convert';
+import copyToClipboard from '@uiw/copy-to-clipboard';
 import Prism from 'prismjs';
 import 'prismjs/components/prism-csharp';
 import 'prismjs/components/prism-swift';
@@ -13,7 +13,7 @@ type CodeProps = {
   title: string;
   lang: string;
   code: string;
-  color?: RGBColor;
+  color?: RgbaColor;
 };
 
 export default function Code(props: CodeProps) {
@@ -22,7 +22,7 @@ export default function Code(props: CodeProps) {
   const [html, setHtml] = useState('');
   function copyHandle() {
     setIsCopy(true);
-    copyTextToClipboard(code || '', (isCopy) => {
+    copyToClipboard(code || '', (isCopy) => {
       let timer = setTimeout(() => {
         setIsCopy(false);
         clearTimeout(timer);
