@@ -1,7 +1,7 @@
 ui-color
 ===
 
-![Producthunt](https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=302301&theme=light)
+[![Producthunt](https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=302301&theme=light)](https://www.producthunt.com/posts/ui-color)
 
 Converting HEX & RGB colors to UIColor/NSColor/Color for both Objective C & Swift & SwiftUI.
 
