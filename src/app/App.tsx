@@ -76,7 +76,7 @@ export default function App() {
               <div>Copyright © uiwjs 2021.</div>
               <div>
                 Developed by{' '}
-                <a href="https://github.com/uiwjs" target="__blank">
+                <a href="https://github.com/jaywcjlove" target="__blank">
                   Kenny
                 </a>
                 .
