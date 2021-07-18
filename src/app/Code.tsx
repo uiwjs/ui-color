@@ -52,6 +52,7 @@ export default function Code(props: CodeProps) {
                 display: 'inline-block',
                 minWidth: 12,
                 minHeight: 12,
+                transition: 'background-color 0.3s ease 0s',
                 backgroundColor: `rgba(${color.r}, ${color.g}, ${color.b}, ${color.a})`,
               }}
             />

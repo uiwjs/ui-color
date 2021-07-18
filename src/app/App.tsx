@@ -36,6 +36,7 @@ export default function App() {
     <div
       style={{
         backgroundColor: `rgba(${color.r}, ${color.g}, ${color.b}, ${color.a})`,
+        transition: 'background-color 0.3s ease 0s',
       }}
     >
       <GitHubCorners fixed zIndex={999} size={60} target="__blank" href="https://github.com/uiwjs/ui-color" />
