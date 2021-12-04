@@ -34,7 +34,7 @@
     "husky": "7.0.2",
     "lint-staged": "11.1.2",
     "kkt": "6.11.0",
-    "prettier": "2.3.2"
+    "prettier": "2.5.1"
   },
   "lint-staged": {
     "*.{js,jsx,tsx,ts,less,md,json}": [
