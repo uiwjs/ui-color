@@ -7,7 +7,8 @@
     "prepare": "husky install",
     "start": "kkt start",
     "build": "kkt build",
-    "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\""
+    "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
+    "map": "source-map-explorer build/static/js/*.js --html build/website-result.html"
   },
   "repository": {
     "type": "git",
@@ -18,23 +19,24 @@
   "dependencies": {
     "@uiw/copy-to-clipboard": "1.0.12",
     "@uiw/react-github-corners": "1.5.3",
-    "@uiw/react-color-circle": "1.0.5",
-    "@uiw/react-color-shade-slider": "1.0.5",
-    "@uiw/react-color-sketch": "1.0.5",
-    "@uiw/react-color-wheel": "1.0.5",
+    "@uiw/react-color-circle": "1.0.8",
+    "@uiw/react-color-shade-slider": "1.0.8",
+    "@uiw/react-color-sketch": "1.0.8",
+    "@uiw/react-color-wheel": "1.0.8",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "prismjs": "1.25.0"
+    "prismjs": "1.26.0"
   },
   "devDependencies": {
-    "@kkt/less-modules": "6.11.0",
+    "@kkt/less-modules": "7.0.5",
     "@types/prismjs": "1.16.6",
-    "@types/react": "17.0.30",
-    "@types/react-dom": "17.0.9",
+    "@types/react": "17.0.38",
+    "@types/react-dom": "17.0.11",
     "husky": "7.0.2",
     "lint-staged": "11.1.2",
-    "kkt": "6.11.0",
-    "prettier": "2.3.2"
+    "source-map-explorer": "2.5.2",
+    "kkt": "7.0.5",
+    "prettier": "2.5.1"
   },
   "lint-staged": {
     "*.{js,jsx,tsx,ts,less,md,json}": [

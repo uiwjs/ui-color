@@ -13,6 +13,28 @@ export default (conf: Configuration, env: 'development' | 'production', options:
   );
   if (env === 'production') {
     conf.output = { ...conf.output, publicPath: './' };
+    conf.optimization = {
+      ...conf.optimization,
+      splitChunks: {
+        cacheGroups: {
+          reactvendor: {
+            test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
+            name: 'react-vendor',
+            chunks: 'all',
+          },
+          prismjs: {
+            test: /[\\/]node_modules[\\/](prismjs)[\\/]/,
+            name: 'prismjs-vendor',
+            chunks: 'all',
+          },
+          uiwjs: {
+            test: /[\\/]node_modules[\\/](@uiw)[\\/]/,
+            name: 'uiw-vendor',
+            chunks: 'all',
+          },
+        },
+      },
+    };
   }
   return conf;
 };
