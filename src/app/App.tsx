@@ -130,6 +130,7 @@ export default function App() {
                 color.a
               }f)`}
             />
+            <Code color={color} lang="css" title="CSS" code={`body { color: ${hex}; }`} />
           </div>
         </div>
       </div>

@@ -5,6 +5,8 @@ import Prism from 'prismjs';
 import 'prismjs/components/prism-csharp';
 import 'prismjs/components/prism-swift';
 import 'prismjs/components/prism-c';
+import 'prismjs/components/prism-css';
+import 'prismjs/components/prism-css-extras';
 import 'prismjs/components/prism-objectivec';
 import styles from './Code.module.css';
 import './prism.css';
@@ -37,6 +39,8 @@ export default function Code(props: CodeProps) {
       html = Prism.highlight(code, Prism.languages.csharp, 'csharp');
     } else if (lang == 'objectivec') {
       html = Prism.highlight(code, Prism.languages.objectivec, 'objectivec');
+    } else if (lang == 'css') {
+      html = Prism.highlight(code, Prism.languages.objectivec, 'css');
     }
     setHtml(html);
   }, [code]);
