@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/static/css/main.a99d4e35.css",
-    "main.js": "/static/js/main.de34f3a3.js",
+    "main.js": "/static/js/main.d0fc85c8.js",
     "uiw-vendor.js": "/static/js/uiw-vendor.092c4800.js",
+    "prismjs-vendor.js": "/static/js/prismjs-vendor.151547bc.js",
     "react-vendor.js": "/static/js/react-vendor.067c90a9.js",
-    "prismjs-vendor.js": "/static/js/prismjs-vendor.a36bfe6b.js",
     "index.html": "/index.html",
     "main.a99d4e35.css.map": "/static/css/main.a99d4e35.css.map",
-    "main.de34f3a3.js.map": "/static/js/main.de34f3a3.js.map",
+    "main.d0fc85c8.js.map": "/static/js/main.d0fc85c8.js.map",
     "uiw-vendor.092c4800.js.map": "/static/js/uiw-vendor.092c4800.js.map",
-    "react-vendor.067c90a9.js.map": "/static/js/react-vendor.067c90a9.js.map",
-    "prismjs-vendor.a36bfe6b.js.map": "/static/js/prismjs-vendor.a36bfe6b.js.map"
+    "prismjs-vendor.151547bc.js.map": "/static/js/prismjs-vendor.151547bc.js.map",
+    "react-vendor.067c90a9.js.map": "/static/js/react-vendor.067c90a9.js.map"
   },
   "entrypoints": [
     "static/js/uiw-vendor.092c4800.js",
+    "static/js/prismjs-vendor.151547bc.js",
     "static/js/react-vendor.067c90a9.js",
-    "static/js/prismjs-vendor.a36bfe6b.js",
     "static/css/main.a99d4e35.css",
-    "static/js/main.de34f3a3.js"
+    "static/js/main.d0fc85c8.js"
   ]
 }
