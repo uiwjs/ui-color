@@ -32,3 +32,17 @@ Your app is ready to be deployed!
 ## Related
 
 [ui-color](https://github.com/manosim/ui-color) Converting HEX & RGB colors to UIColor for both Objective C & Swift.
+
+## Contributors
+
+As always, thanks to our amazing contributors!
+
+<a href="https://github.com/uiwjs/ui-color/graphs/contributors">
+  <img src="https://uiwjs.github.io/ui-color/CONTRIBUTORS.svg" />
+</a>
+
+Made with [github-action-contributors](https://github.com/jaywcjlove/github-action-contributors).
+
+## License
+
+Licensed under the MIT License.
