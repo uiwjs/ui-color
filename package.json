@@ -36,7 +36,7 @@
     "lint-staged": "^13.0.3",
     "source-map-explorer": "~2.5.2",
     "kkt": "^7.2.0",
-    "prettier": "^2.7.1"
+    "prettier": "^3.0.0"
   },
   "lint-staged": {
     "*.{js,jsx,tsx,ts,less,md,json}": [
