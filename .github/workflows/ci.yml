@@ -6,12 +6,12 @@ on:
 
 jobs:
   build-deploy:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
       with:
-        node-version: 16
+        node-version: 18
 
     - run: npm install
     - run: npm run build
@@ -26,7 +26,7 @@ jobs:
 
     - name: get tag version
       id: tag_version
-      uses: jaywcjlove/create-tag-action@v1.3.7
+      uses: jaywcjlove/create-tag-action@main
       with:
         package-path: package.json
 
@@ -40,13 +40,13 @@ jobs:
 
     - name: Create Tag
       id: create_tag
-      uses: jaywcjlove/create-tag-action@v1.3.7
+      uses: jaywcjlove/create-tag-action@main
       with:
         package-path: package.json
 
     - name: Generate Changelog
       id: changelog
-      uses: jaywcjlove/changelog-generator@v1.5.7
+      uses: jaywcjlove/changelog-generator@main
       if: steps.create_tag.outputs.successful
       with:
         head-ref: ${{steps.create_tag.outputs.version}}
