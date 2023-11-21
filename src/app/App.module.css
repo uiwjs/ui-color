@@ -23,6 +23,12 @@ html, body {
   max-width: 330px;
 }
 
+.appstore {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
 .footer {
   text-align: center;
   padding: 10px 0 38px 0;

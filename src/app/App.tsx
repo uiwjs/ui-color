@@ -39,6 +39,9 @@ export default function App() {
         transition: 'background-color 0.3s ease 0s',
       }}
     >
+      <a href="https://apps.apple.com/app/palettegenius/id6472593276" target="_blank">
+        <img className={styles.appstore} src="https://jaywcjlove.github.io/sb/download/white-appstore.svg" />
+      </a>
       <GitHubCorners fixed zIndex={999} size={60} target="__blank" href="https://github.com/uiwjs/ui-color" />
       <div className={styles.warpper}>
         <div className={styles.colors}>
@@ -94,9 +97,7 @@ export default function App() {
               color={color}
               lang="swift"
               title="Swift for iOS"
-              code={`UIColor(red: ${color.r}/255, green: ${color.g}/255, blue: ${color.b}/255, alpha: ${
-                color.a
-              })`}
+              code={`UIColor(red: ${color.r}/255, green: ${color.g}/255, blue: ${color.b}/255, alpha: ${color.a})`}
             />
             <Code
               color={color}
