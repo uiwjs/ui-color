@@ -2,9 +2,16 @@ ui-color
 ===
 
 [![Producthunt](https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=302301&theme=light)](https://www.producthunt.com/posts/ui-color)
-[![](https://jaywcjlove.github.io/sb/download/white-appstore.svg)](https://apps.apple.com/app/palettegenius/id6472593276)
 
 Converting HEX & RGB colors to UIColor/NSColor/Color for both Objective C & Swift & SwiftUI.
+
+### PaletteGenius
+
+[![](https://jaywcjlove.github.io/sb/download/white-appstore.svg)](https://apps.apple.com/app/palettegenius/id6472593276)
+
+### DevHub
+
+[![](https://jaywcjlove.github.io/sb/download/white-appstore.svg)](https://apps.apple.com/app/devhub/id6476452351)
 
 [![](https://user-images.githubusercontent.com/1680273/125649023-f0526130-fc7b-4868-8bdd-20d7525245d1.png)](https://uiwjs.github.io/ui-color/)
 
