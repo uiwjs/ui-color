@@ -22,7 +22,7 @@
     "@uiw/react-color-circle": "^1.1.0",
     "@uiw/react-color-shade-slider": "^1.1.0",
     "@uiw/react-color-sketch": "^1.1.0",
-    "@uiw/react-color-wheel": "^1.1.0",
+    "@uiw/react-color-wheel": "^2.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "prismjs": "^1.28.0"
