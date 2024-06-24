@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/static/css/main.769e7439.css",
-    "main.js": "/static/js/main.93f12966.js",
-    "uiw-vendor.js": "/static/js/uiw-vendor.d50f74b4.js",
+    "main.js": "/static/js/main.851f69a7.js",
+    "uiw-vendor.js": "/static/js/uiw-vendor.a6050bcf.js",
     "react-vendor.js": "/static/js/react-vendor.7aef6517.js",
     "prismjs-vendor.js": "/static/js/prismjs-vendor.4e944869.js",
     "index.html": "/index.html",
     "main.769e7439.css.map": "/static/css/main.769e7439.css.map",
-    "main.93f12966.js.map": "/static/js/main.93f12966.js.map",
-    "uiw-vendor.d50f74b4.js.map": "/static/js/uiw-vendor.d50f74b4.js.map",
+    "main.851f69a7.js.map": "/static/js/main.851f69a7.js.map",
+    "uiw-vendor.a6050bcf.js.map": "/static/js/uiw-vendor.a6050bcf.js.map",
     "react-vendor.7aef6517.js.map": "/static/js/react-vendor.7aef6517.js.map",
     "prismjs-vendor.4e944869.js.map": "/static/js/prismjs-vendor.4e944869.js.map"
   },
   "entrypoints": [
-    "static/js/uiw-vendor.d50f74b4.js",
+    "static/js/uiw-vendor.a6050bcf.js",
     "static/js/react-vendor.7aef6517.js",
     "static/js/prismjs-vendor.4e944869.js",
     "static/css/main.769e7439.css",
-    "static/js/main.93f12966.js"
+    "static/js/main.851f69a7.js"
   ]
 }
